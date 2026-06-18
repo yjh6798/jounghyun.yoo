@@ -3,19 +3,19 @@ layout: about
 title: About
 nav_order: 1
 permalink: /
-subtitle: Postdoctoral Researcher, <a href='https://mede.caltech.edu/'>Department of Medical Engineering</a>, California Institute of Technology
+subtitle:
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-more_info: >
-  <div style="font-family: inherit; font-size: 0.92rem; line-height: 1.35; text-align: left;">
-    <strong>Postdoctoral Researcher</strong><br>
-    Department of Medical Engineering<br>
-    California Institute of Technology<br>
-    Pasadena, California, USA
-  </div>
+  more_info: >
+    <div style="font-family: inherit; font-size:0.92rem; line-height:1.4; text-align:left; margin-top:0.9rem;">
+      <strong>Postdoctoral Researcher</strong><br>
+      <a href="https://mede.caltech.edu/" target="_blank">Department of Medical Engineering</a><br>
+      California Institute of Technology<br>
+      Pasadena, California, USA
+    </div>
 
 selected_papers: false
 social: true
@@ -36,6 +36,13 @@ latest_posts:
 .post p{
   text-align: justify;
   line-height: 1.8;
+}
+
+/* Right profile text */
+.profile .more-info{
+  font-size:0.92rem;
+  line-height:1.4;
+  margin-top:0.8rem;
 }
 
 /* Social icons */
