@@ -9,7 +9,7 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
-  more_info: >
+more_info: >
   <div style="font-family: inherit; font-size: 0.95rem; line-height: 1.45; text-align: left;">
     <p style="margin-bottom: 0.25rem;"><strong>Postdoctoral Researcher</strong></p>
     <p style="margin-bottom: 0.25rem;">Department of Medical Engineering</p>
