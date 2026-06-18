@@ -10,7 +10,7 @@ profile:
   image: prof_pic.jpg
   image_circular: true
   more_info: >
-    <div style="font-family: Arial, sans-serif; font-size: 0.95rem; line-height: 1.45; text-align: left;">
+    <div style="font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; line-height: 1.45; text-align: left;">
       <p style="margin-bottom: 0.25rem;"><strong>Postdoctoral Researcher</strong></p>
       <p style="margin-bottom: 0.25rem;">Department of Medical Engineering</p>
       <p style="margin-bottom: 0.25rem;">California Institute of Technology</p>
@@ -19,10 +19,9 @@ profile:
 
 selected_papers: false
 social: true
----
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: false
   scrollable: true
   limit: 5
 
@@ -31,6 +30,25 @@ latest_posts:
   scrollable: true
   limit: 3
 ---
+
+<style>
+/* About paragraph */
+.post p{
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* Social icons */
+.social i,
+.social svg,
+.social .ai{
+  font-size:1.45rem !important;
+}
+
+.social a{
+  margin:0 .18rem !important;
+}
+</style>
 
 I am a postdoctoral researcher in the Department of Medical Engineering at the California Institute of Technology, in Prof. Wei Gao's laboratory. I received my Ph.D. in Chemical Engineering from POSTECH and previously held postdoctoral positions at the Korea Institute of Science and Technology (KIST) and the Ulsan National Institute of Science and Technology (UNIST).
 
