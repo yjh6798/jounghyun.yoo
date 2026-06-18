@@ -8,17 +8,18 @@ subtitle: Postdoctoral Researcher, <a href='https://mede.caltech.edu/'>Departmen
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
-more_info: >
-  <div style="font-family: inherit; font-size: 0.95rem; line-height: 1.45; text-align: left;">
-    <p style="margin-bottom: 0.25rem;"><strong>Postdoctoral Researcher</strong></p>
-    <p style="margin-bottom: 0.25rem;">Department of Medical Engineering</p>
-    <p style="margin-bottom: 0.25rem;">California Institute of Technology</p>
-    <p style="margin-bottom: 0;">Pasadena, California, USA</p>
-  </div>
+  image_circular: true
+  more_info: >
+    <div style="font-family: Arial, sans-serif; font-size: 0.95rem; line-height: 1.45; text-align: left;">
+      <p style="margin-bottom: 0.25rem;"><strong>Postdoctoral Researcher</strong></p>
+      <p style="margin-bottom: 0.25rem;">Department of Medical Engineering</p>
+      <p style="margin-bottom: 0.25rem;">California Institute of Technology</p>
+      <p style="margin-bottom: 0;">Pasadena, California, USA</p>
+    </div>
 
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false
+social: true
+---
 
 announcements:
   enabled: false # includes a list of news items
