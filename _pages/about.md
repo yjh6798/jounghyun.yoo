@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 nav_order: 1
 permalink: /
 subtitle: Postdoctoral Researcher, <a href='https://mede.caltech.edu/'>Department of Medical Engineering</a>, California Institute of Technology
