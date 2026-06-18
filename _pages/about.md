@@ -29,8 +29,14 @@ latest_posts:
   limit: 3
 ---
 
-I am a postdoctoral researcher in the [Department of Medical Engineering](https://mede.caltech.edu/) at the California Institute of Technology, working in the group of Prof. Wei Gao. My research develops advanced nanomaterials and micro/nanorobotic systems that can navigate, sense, and deliver therapeutics within complex biological environments—including active strategies for crossing the blood–brain barrier and reaching the brain.
+I am a postdoctoral researcher in the Department of Medical Engineering at the California Institute of Technology, in Prof. Wei Gao's laboratory. I received my Ph.D. in Chemical Engineering from POSTECH and previously held postdoctoral positions at the Korea Institute of Science and Technology (KIST) and the Ulsan National Institute of Science and Technology (UNIST).
 
-I also build imaging-guided, in vivo biofabrication platforms—such as acoustic printing—that leverage machine learning to pattern functional materials at high resolution inside living systems. Across these directions, my goal is to translate advances in nanotechnology and biofabrication into next-generation precision medicine.
+My research focuses on translational nanorobotics and adaptive biofabrication for precision medicine. I engineer micro/nanorobotic and nanomaterial systems that actively interact with complex biological environments to enable targeted sensing, therapeutic delivery, and tissue modulation.
 
-I received my Ph.D. in Chemical Engineering from POSTECH and previously held postdoctoral positions at the Korea Institute of Science and Technology (KIST) and the Ulsan National Institute of Science and Technology (UNIST). You can find more in my [publications](/publications/) and [CV](/assets/pdf/Jounghyun_Yoo_CV.pdf).
+My current research aims to develop clinically translatable nanorobots capable of overcoming biological and structural barriers, including the blood–brain barrier, dense extracellular matrices, and other restricted tissue interfaces that limit conventional therapeutic delivery. I am also interested in bioadaptive systems that dynamically respond to local biochemical and mechanical cues to achieve more precise and effective therapies.
+
+In parallel, I develop imaging- and AI-guided in vivo biofabrication platforms, including acoustic printing, for the high-resolution patterning of functional biomaterials inside living systems. This work aims to enable minimally invasive construction of therapeutic biointerfaces that can adapt to moving and structurally complex tissues.
+
+My long-term goal is to establish adaptive biomedical systems that integrate nanorobotics and intelligent biofabrication to enable targeted therapy, tissue repair, and regenerative medicine.
+
+Further details on my research and academic background are available in my [publications](/publications/) and [CV](/assets/pdf/Jounghyun_Yoo_CV.pdf).
