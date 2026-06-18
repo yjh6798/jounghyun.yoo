@@ -19,18 +19,31 @@ nav_order: 4
 .publications ol.bibliography > li {
   counter-increment: pubnum;
   list-style: none !important;
-  position: relative;
-  padding-left: 3.2rem !important;
-  margin-bottom: 1.6rem;
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.7rem;
+  padding-left: 0 !important;
 }
 
 .publications ol.bibliography > li::before {
-  content: "[" counter(pubnum) "]";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-weight: 600;
-  color: #333;
+  content: counter(pubnum) ".";
+  font-weight: 400;
+  color: inherit;
+  flex: 0 0 auto;
+}
+
+.publications ol.bibliography > li > .row {
+  flex: 1;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.publications ol.bibliography > li > .row > [class*="col-"] {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 .publications h2 {
@@ -41,14 +54,6 @@ nav_order: 4
   margin-top: 2rem;
   margin-bottom: 1.2rem;
   text-align: left !important;
-}
-
-.publications .row {
-  margin-left: 0 !important;
-}
-
-.publications [class*="col-sm"] {
-  padding-left: 0 !important;
 }
 </style>
 
