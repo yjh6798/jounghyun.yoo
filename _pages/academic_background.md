@@ -44,13 +44,13 @@ nav_order: 3
   font-size:1.08rem;
   font-weight:600;
   color:#111;
-  margin-bottom:.2rem;
+  margin-bottom:.18rem;
 }
 
 .academic-place{
   font-size:1rem;
   color:#222;
-  line-height:1.5;
+  line-height:1.55;
 }
 
 .academic-note{
@@ -63,7 +63,7 @@ nav_order: 3
 
 .academic-item{
   grid-template-columns:1fr;
-  row-gap:.25rem;
+  row-gap:.3rem;
 }
 
 .academic-date{
@@ -82,6 +82,7 @@ nav_order: 3
 <h2>Professional Experience</h2>
 
 <div class="academic-item">
+
 <div class="academic-date">
 2021.09 – Present
 </div>
@@ -89,11 +90,11 @@ nav_order: 3
 <div>
 
 <div class="academic-title">
-Postdoctoral Researcher
+Postdoctoral Researcher, Medical Engineering
 </div>
 
 <div class="academic-place">
-Department of Medical Engineering, California Institute of Technology (Caltech)
+California Institute of Technology (Caltech)
 </div>
 
 <div class="academic-note">
@@ -105,6 +106,7 @@ Co-advisor: Prof. Jinmyoung Joo, Ulsan National Institute of Science and Technol
 </div>
 
 </div>
+
 </div>
 
 <div class="academic-item">
@@ -116,11 +118,11 @@ Co-advisor: Prof. Jinmyoung Joo, Ulsan National Institute of Science and Technol
 <div>
 
 <div class="academic-title">
-Postdoctoral Researcher
+Postdoctoral Researcher, Chemical and Biological Integrative Research Center
 </div>
 
 <div class="academic-place">
-Center for Theragnosis, Biomedical Research Institute, Korea Institute of Science and Technology (KIST)
+Korea Institute of Science and Technology (KIST)
 </div>
 
 <div class="academic-note">
