@@ -132,7 +132,7 @@ latest_posts:
 
 </style>
 
-I am a postdoctoral researcher in the Department of Medical Engineering at the California Institute of Technology, in Prof. Wei Gao's laboratory. I received my Ph.D. in Chemical Engineering from POSTECH and previously held postdoctoral positions at the Korea Institute of Science and Technology (KIST) and the Ulsan National Institute of Science and Technology (UNIST).
+I am a postdoctoral researcher in the Department of Medical Engineering at the California Institute of Technology, in Prof. Wei Gao's laboratory.
 
 My research focuses on translational nanorobotics and adaptive biofabrication for precision medicine. I engineer micro/nanorobotic and nanomaterial systems that actively interact with complex biological environments to enable targeted sensing, therapeutic delivery, and tissue modulation.
 
