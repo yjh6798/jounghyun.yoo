@@ -90,7 +90,11 @@ nav_order: 3
 <div>
 
 <div class="academic-title">
-Postdoctoral Researcher, Medical Engineering
+Postdoctoral Researcher
+</div>
+
+<div class="academic-place">
+Department of Medical Engineering
 </div>
 
 <div class="academic-place">
@@ -118,7 +122,11 @@ Co-advisor: Prof. Jinmyoung Joo, Ulsan National Institute of Science and Technol
 <div>
 
 <div class="academic-title">
-Postdoctoral Researcher, Chemical and Biological Integrative Research Center
+Postdoctoral Researcher
+</div>
+
+<div class="academic-place">
+Chemical and Biological Integrative Research Center
 </div>
 
 <div class="academic-place">
