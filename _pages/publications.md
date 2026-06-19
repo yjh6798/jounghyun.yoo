@@ -51,7 +51,7 @@ nav_order: 4
 }
 
 .publications .title {
-  margin-top: 0.10rem !important;
+  margin-top: 0.05rem !important;
   margin-bottom: 0.08rem !important;
   line-height: 1.45 !important;
   font-weight: 500 !important;
