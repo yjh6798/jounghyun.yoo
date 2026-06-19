@@ -5,7 +5,6 @@
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://jounghyunyoo.com/publications/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Jounghyun</span> Yoo </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Research </a> </li> <li class="nav-item active"> <a class="nav-link" href="/publications/">Publications <span class="sr-only">(current)</span> </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Publications</h1> <p class="post-description"></p> </header> <article> <style>
-/* Numbering */
 .publications {
   counter-reset: pubnum;
 }
@@ -25,20 +24,18 @@
   padding-left: 0 !important;
 }
 
-/* Publication number */
 .publications ol.bibliography > li::before {
   content: counter(pubnum) ".";
-  flex: 0 0 24px;
-  width: 24px;
+  flex: 0 0 22px;
+  width: 22px;
   text-align: right;
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.45;
-  padding-top: 0.10rem;
+  padding-top: 0.03rem;
   color: #222;
 }
 
-/* Main publication block */
 .publications ol.bibliography > li > .row {
   flex: 1;
   margin: 0 !important;
@@ -51,27 +48,23 @@
   margin: 0 !important;
 }
 
-/* Title */
 .publications .title {
   margin-top: 0 !important;
-  margin-bottom: 0.15rem !important;
+  margin-bottom: 0.08rem !important;
   line-height: 1.45 !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
-/* Authors */
 .publications .author,
 .publications .authors {
   line-height: 1.45 !important;
 }
 
-/* Journal */
 .publications .periodical {
   margin-top: 0.15rem !important;
   line-height: 1.35 !important;
 }
 
-/* DOI button */
 .publications .links {
   margin-top: 0.45rem !important;
 }
@@ -81,7 +74,6 @@
   font-size: 0.72rem !important;
 }
 
-/* Year */
 .publications h2 {
   color: #333 !important;
   font-weight: 600 !important;
