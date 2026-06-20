@@ -1,3 +1,4 @@
+```markdown
 ---
 layout: page
 title: Academic Background
@@ -9,7 +10,8 @@ nav_order: 3
 <style>
 
 .academic-background{
-  max-width:900px;
+  max-width:none;
+  margin:0;
 }
 
 .academic-section{
@@ -24,6 +26,7 @@ nav_order: 3
   border-bottom:1px solid #d8d8d8;
   padding-bottom:.35rem;
   margin-bottom:1.5rem;
+  max-width:100%;
 }
 
 .academic-item{
@@ -31,6 +34,7 @@ nav_order: 3
   grid-template-columns:150px 1fr;
   column-gap:1.8rem;
   margin-bottom:2rem;
+  max-width:900px;
 }
 
 .academic-date{
@@ -64,6 +68,7 @@ nav_order: 3
 .academic-item{
   grid-template-columns:1fr;
   row-gap:.3rem;
+  max-width:100%;
 }
 
 .academic-date{
@@ -202,3 +207,4 @@ Magna cum laude
 </div>
 
 </div>
+```
