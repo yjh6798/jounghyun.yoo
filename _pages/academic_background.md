@@ -206,4 +206,3 @@ Magna cum laude
 </div>
 
 </div>
-```
