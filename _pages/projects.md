@@ -10,7 +10,7 @@ nav_order: 2
 <style>
 .research-page {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0;
   text-align: justify;
   line-height: 1.8;
 }
