@@ -15,12 +15,13 @@ nav_order: 2
 }
 
 .research-page h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  color: #333;
+  font-size: 1.85rem;
+  font-weight: 600;
   margin-top: 3.2rem;
-  margin-bottom: 0.4rem;
-  border-bottom: 1px solid #d9d9d9;
-  padding-bottom: 0.45rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 0.35rem;
   max-width: 100%;
 }
 
@@ -31,7 +32,7 @@ nav_order: 2
 .research-page p {
   max-width: 900px;
   text-align: justify;
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 1rem;
 }
 
