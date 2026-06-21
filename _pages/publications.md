@@ -38,7 +38,8 @@ nav_order: 4
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.45;
-  padding-top: 0.04rem;
+  padding-top: 0;
+  margin-top: 0;
   color: #222;
 }
 
@@ -58,8 +59,9 @@ nav_order: 4
 }
 
 .publications ol.bibliography .title {
-  margin-top: 0.08rem !important;
+  margin-top: 0 !important;
   margin-bottom: 0.08rem !important;
+  padding-top: 0 !important;
   line-height: 1.45 !important;
   font-weight: 500 !important;
   overflow-wrap: anywhere;
@@ -125,6 +127,8 @@ nav_order: 4
     flex: 0 0 20px;
     width: 20px;
     font-size: 1rem;
+    padding-top: 0;
+    margin-top: 0;
   }
 }
 </style>
