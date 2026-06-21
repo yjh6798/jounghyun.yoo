@@ -15,18 +15,19 @@ nav_order: 2
 }
 
 .research-page h2 {
-  color: #333;
-  font-size: 1.85rem;
-  font-weight: 600;
-  margin-top: 3.2rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #d8d8d8;
-  padding-bottom: 0.35rem;
+  color: #333 !important;
+  font-size: 1.85rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  margin-top: 3.2rem !important;
+  margin-bottom: 1.5rem !important;
+  border-bottom: 1px solid #d8d8d8 !important;
+  padding-bottom: 0.35rem !important;
   max-width: 100%;
 }
 
 .research-page h2:first-child {
-  margin-top: 0;
+  margin-top: 2.5rem !important;
 }
 
 .research-page p {
