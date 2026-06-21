@@ -12,6 +12,27 @@ nav_order: 4
   max-width: none;
 }
 
+/* Contribution note */
+.publication-note {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  font-size: 0.92rem;
+  color: #555;
+}
+
+/* Year heading: match Academic Background section heading */
+.publications h2 {
+  color: #333 !important;
+  font-size: 1.85rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  border-bottom: 1px solid #d8d8d8 !important;
+  padding-bottom: 0.35rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: left !important;
+}
+
 .publications ol.bibliography {
   padding-left: 0 !important;
   margin-left: 0 !important;
@@ -108,16 +129,6 @@ nav_order: 4
   text-decoration: none !important;
 }
 
-.publications h2 {
-  color: #333 !important;
-  font-weight: 600 !important;
-  border-bottom: 1px solid #d8d8d8;
-  padding-bottom: 0.35rem;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
-  text-align: left !important;
-}
-
 @media (max-width: 768px) {
   .publications ol.bibliography > li {
     gap: 0.65rem;
@@ -133,7 +144,7 @@ nav_order: 4
 }
 </style>
 
-<div style="margin-bottom:1.4rem;font-size:0.92rem;color:#555;">
+<div class="publication-note">
 <strong>†</strong> Equal contribution
 &nbsp;&nbsp;&nbsp;
 <strong>*</strong> Corresponding author
