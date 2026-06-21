@@ -15,7 +15,7 @@ nav_order: 4
 /* Contribution note */
 .publication-note {
   margin-top: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
   font-size: 0.92rem;
   color: #555;
 }
