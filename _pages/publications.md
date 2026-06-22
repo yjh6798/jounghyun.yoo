@@ -14,8 +14,7 @@ nav_order: 4
 
 /* Contribution note */
 .publication-note {
-  margin-top: 0;
-  margin-bottom: 1.2rem;
+  margin: 0 0 1.2rem 0;
   font-size: 0.92rem;
   color: #555;
 }
@@ -26,19 +25,17 @@ nav_order: 4
   font-size: 1.85rem !important;
   font-weight: 600 !important;
   line-height: 1.25 !important;
+  text-align: left !important;
   border-top: 1px solid #e0e0e0 !important;
   border-bottom: 1px solid #d8d8d8 !important;
-  padding-top: 1.0rem !important;
-  padding-bottom: 0.35rem !important;
-  margin-top: -0.35rem !important;
-  margin-bottom: 1.5rem !important;
-  text-align: left !important;
+  padding: 1rem 0 0.35rem 0 !important;
+  margin: -0.35rem 0 1.5rem 0 !important;
 }
 
 .publications ol.bibliography {
+  width: 100% !important;
   padding-left: 0 !important;
   margin-left: 0 !important;
-  width: 100% !important;
 }
 
 /* Each publication item */
@@ -63,17 +60,15 @@ nav_order: 4
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.45;
-  padding-top: 0;
-  margin-top: 0;
   color: #222;
 }
 
-/* Remove default bootstrap-like narrow column layout */
+/* Full-width bibliography content */
 .publications ol.bibliography > li > .row {
   flex: 1 1 auto !important;
+  width: 100% !important;
   min-width: 0 !important;
   margin: 0 !important;
-  width: 100% !important;
 }
 
 .publications ol.bibliography > li > .row > [class*="col-"] {
@@ -87,14 +82,12 @@ nav_order: 4
 /* Title */
 .publications ol.bibliography .title {
   display: block !important;
-  margin-top: 0 !important;
-  margin-bottom: 0.08rem !important;
-  padding-top: 0 !important;
+  margin: 0 0 0.08rem 0 !important;
+  padding: 0 !important;
   line-height: 1.45 !important;
   font-weight: 600 !important;
   color: #111 !important;
   overflow-wrap: anywhere;
-  word-break: normal;
 }
 
 /* Authors */
@@ -104,7 +97,6 @@ nav_order: 4
   line-height: 1.45 !important;
   color: #222 !important;
   overflow-wrap: anywhere;
-  word-break: normal;
 }
 
 /* Highlight my name */
@@ -113,26 +105,18 @@ nav_order: 4
   font-weight: 400 !important;
 }
 
-/* Journal / volume / issue / pages / year line */
+/* Journal line: hidden first to prevent year flicker */
 .publications ol.bibliography .periodical {
   display: block !important;
-  margin-top: 0.15rem !important;
-  margin-bottom: 0 !important;
+  visibility: hidden;
+  margin: 0.15rem 0 0 0 !important;
   line-height: 1.35 !important;
   color: #222 !important;
   overflow-wrap: anywhere;
-  word-break: normal;
 }
 
-/* Make sure all bibliographic details are visible */
-.publications ol.bibliography .periodical span,
-.publications ol.bibliography .periodical em,
-.publications ol.bibliography .periodical i,
-.publications ol.bibliography .periodical b,
-.publications ol.bibliography .periodical strong {
-  display: inline !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+.publications ol.bibliography .periodical.pub-ready {
+  visibility: visible;
 }
 
 .publications ol.bibliography .periodical em,
@@ -140,7 +124,7 @@ nav_order: 4
   font-style: italic !important;
 }
 
-/* Avoid accidental hiding from theme classes */
+/* Hide unnecessary expandable elements */
 .publications ol.bibliography .abbr,
 .publications ol.bibliography .abstract,
 .publications ol.bibliography .award,
@@ -182,7 +166,7 @@ nav_order: 4
   }
 
   .publications ol.bibliography > li::before {
-    flex: 0 0 20px;
+    flex-basis: 20px;
     width: 20px;
     font-size: 1rem;
   }
@@ -203,15 +187,38 @@ nav_order: 4
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const authorBlocks = document.querySelectorAll(
-    ".publications ol.bibliography .author, .publications ol.bibliography .authors"
-  );
+  /* Highlight my name automatically */
+  document
+    .querySelectorAll(".publications ol.bibliography .author, .publications ol.bibliography .authors")
+    .forEach(function (block) {
+      block.innerHTML = block.innerHTML.replace(
+        /Jounghyun Yoo([†*])?/g,
+        '<span class="my-name">Jounghyun Yoo$1</span>'
+      );
+    });
 
-  authorBlocks.forEach(function (block) {
-    block.innerHTML = block.innerHTML.replace(
-      /Jounghyun Yoo([†*])?/g,
-      '<span class="my-name">Jounghyun Yoo$1</span>'
-    );
-  });
+  /* Automatically remove year from every bibliography-generated journal line */
+  document
+    .querySelectorAll(".publications ol.bibliography .periodical")
+    .forEach(function (periodical) {
+      let html = periodical.innerHTML;
+
+      html = html
+        /* remove years such as 2024, (2024), , 2024 */
+        .replace(/\(\s*20\d{2}\s*\)/g, "")
+        .replace(/,\s*20\d{2}(?=[,.\s<]|$)/g, "")
+        .replace(/\s+20\d{2}(?=[,.\s<]|$)/g, "")
+
+        /* clean punctuation and spaces */
+        .replace(/\s*,\s*/g, ", ")
+        .replace(/,\s*,+/g, ",")
+        .replace(/,\s*\./g, ".")
+        .replace(/,\s*$/g, "")
+        .replace(/\s{2,}/g, " ")
+        .trim();
+
+      periodical.innerHTML = html;
+      periodical.classList.add("pub-ready");
+    });
 });
 </script>
