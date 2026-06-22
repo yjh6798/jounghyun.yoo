@@ -182,42 +182,18 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 
-  /* Format journal line automatically from rendered text */
+  /* Remove redundant year from journal line while preserving existing italic journal styling */
   const periodicals = document.querySelectorAll(
     ".publications ol.bibliography .periodical"
   );
 
   periodicals.forEach(function (periodical) {
-    let text = periodical.textContent.replace(/\s+/g, " ").trim();
-
-    if (!text) return;
-
-    /* Remove redundant year because publications are already grouped by year */
-    text = text
-      .replace(/,\s*20\d{2}\s*$/g, "")
-      .replace(/\s+20\d{2}\s*$/g, "")
+    periodical.innerHTML = periodical.innerHTML
+      .replace(/,\s*20\d{2}(?=\s*[\.\)]?\s*$)/g, "")
+      .replace(/\s+20\d{2}(?=\s*[\.\)]?\s*$)/g, "")
+      .replace(/\(\s*20\d{2}\s*\)(?=\s*[\.\)]?\s*$)/g, "")
       .replace(/,\s*$/g, "")
       .trim();
-
-    if (!text) return;
-
-    const parts = text
-      .split(",")
-      .map(function (part) {
-        return part.trim();
-      })
-      .filter(Boolean);
-
-    if (parts.length === 0) return;
-
-    const journal = parts[0];
-    const details = parts.slice(1).join(", ");
-
-    if (details) {
-      periodical.innerHTML = "<em>" + journal + "</em>, " + details;
-    } else {
-      periodical.innerHTML = "<em>" + journal + "</em>";
-    }
   });
 });
 </script>
