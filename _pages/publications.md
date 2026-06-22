@@ -12,14 +12,12 @@ nav_order: 4
   max-width: none;
 }
 
-/* Contribution note */
 .publication-note {
   margin: 0 0 1.2rem 0;
   font-size: 0.92rem;
   color: #555;
 }
 
-/* Year heading */
 .publications h2 {
   color: #333 !important;
   font-size: 1.85rem !important;
@@ -36,9 +34,13 @@ nav_order: 4
   width: 100% !important;
   padding-left: 0 !important;
   margin-left: 0 !important;
+  visibility: hidden;
 }
 
-/* Each publication item */
+.publications.pub-loaded ol.bibliography {
+  visibility: visible;
+}
+
 .publications ol.bibliography > li {
   counter-increment: pubnum;
   list-style: none !important;
@@ -51,7 +53,6 @@ nav_order: 4
   min-width: 0 !important;
 }
 
-/* Publication number */
 .publications ol.bibliography > li::before {
   content: counter(pubnum) ".";
   flex: 0 0 22px;
@@ -63,7 +64,6 @@ nav_order: 4
   color: #222;
 }
 
-/* Full-width bibliography content */
 .publications ol.bibliography > li > .row {
   flex: 1 1 auto !important;
   width: 100% !important;
@@ -79,7 +79,6 @@ nav_order: 4
   margin: 0 !important;
 }
 
-/* Title */
 .publications ol.bibliography .title {
   display: block !important;
   margin: 0 0 0.08rem 0 !important;
@@ -90,7 +89,6 @@ nav_order: 4
   overflow-wrap: anywhere;
 }
 
-/* Authors */
 .publications ol.bibliography .author,
 .publications ol.bibliography .authors {
   display: block !important;
@@ -99,24 +97,17 @@ nav_order: 4
   overflow-wrap: anywhere;
 }
 
-/* Highlight my name */
 .publications .my-name {
   color: #8a0078 !important;
   font-weight: 400 !important;
 }
 
-/* Journal line: hidden first to prevent year flicker */
 .publications ol.bibliography .periodical {
   display: block !important;
-  visibility: hidden;
   margin: 0.15rem 0 0 0 !important;
   line-height: 1.35 !important;
   color: #222 !important;
   overflow-wrap: anywhere;
-}
-
-.publications ol.bibliography .periodical.pub-ready {
-  visibility: visible;
 }
 
 .publications ol.bibliography .periodical em,
@@ -124,7 +115,6 @@ nav_order: 4
   font-style: italic !important;
 }
 
-/* Hide unnecessary expandable elements */
 .publications ol.bibliography .abbr,
 .publications ol.bibliography .abstract,
 .publications ol.bibliography .award,
@@ -133,7 +123,6 @@ nav_order: 4
   display: none !important;
 }
 
-/* DOI / link buttons */
 .publications ol.bibliography .links {
   display: block !important;
   margin-top: 0.38rem !important;
@@ -186,39 +175,43 @@ nav_order: 4
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  /* Highlight my name automatically */
-  document
-    .querySelectorAll(".publications ol.bibliography .author, .publications ol.bibliography .authors")
-    .forEach(function (block) {
+(function () {
+  function cleanPublications() {
+    const pub = document.querySelector(".publications");
+    if (!pub) return;
+
+    const lists = pub.querySelectorAll("ol.bibliography");
+
+    lists.forEach(function (list) {
+      list.innerHTML = list.innerHTML
+        /* Remove years from generated bibliography entries */
+        .replace(/,\s*(19|20)\d{2}(?=\s*(<|$|\.|,))/g, "")
+        .replace(/\s*\(\s*(19|20)\d{2}\s*\)/g, "")
+        .replace(/>\s*,\s*(19|20)\d{2}\s*</g, "><")
+        .replace(/>\s*,\s*(19|20)\d{2}/g, ">")
+        .replace(/\s+(19|20)\d{2}(?=\s*<)/g, "")
+
+        /* Clean punctuation */
+        .replace(/,\s*,/g, ",")
+        .replace(/,\s*\./g, ".")
+        .replace(/,\s*</g, "<")
+        .replace(/\s{2,}/g, " ");
+    });
+
+    pub.querySelectorAll(".author, .authors").forEach(function (block) {
       block.innerHTML = block.innerHTML.replace(
         /Jounghyun Yoo([†*])?/g,
         '<span class="my-name">Jounghyun Yoo$1</span>'
       );
     });
 
-  /* Automatically remove year from every bibliography-generated journal line */
-  document
-    .querySelectorAll(".publications ol.bibliography .periodical")
-    .forEach(function (periodical) {
-      let html = periodical.innerHTML;
+    pub.classList.add("pub-loaded");
+  }
 
-      html = html
-        /* remove years such as 2024, (2024), , 2024 */
-        .replace(/\(\s*20\d{2}\s*\)/g, "")
-        .replace(/,\s*20\d{2}(?=[,.\s<]|$)/g, "")
-        .replace(/\s+20\d{2}(?=[,.\s<]|$)/g, "")
-
-        /* clean punctuation and spaces */
-        .replace(/\s*,\s*/g, ", ")
-        .replace(/,\s*,+/g, ",")
-        .replace(/,\s*\./g, ".")
-        .replace(/,\s*$/g, "")
-        .replace(/\s{2,}/g, " ")
-        .trim();
-
-      periodical.innerHTML = html;
-      periodical.classList.add("pub-ready");
-    });
-});
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", cleanPublications);
+  } else {
+    cleanPublications();
+  }
+})();
 </script>
