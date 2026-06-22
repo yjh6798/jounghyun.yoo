@@ -111,6 +111,10 @@ nav_order: 4
   word-break: normal;
 }
 
+.publications ol.bibliography .periodical em {
+  font-style: italic !important;
+}
+
 /* DOI / link buttons */
 .publications ol.bibliography .links {
   margin-top: 0.38rem !important;
@@ -173,41 +177,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   authorBlocks.forEach(function (block) {
     block.innerHTML = block.innerHTML.replace(
-      /Jounghyun Yoo/g,
-      '<span class="my-name">Jounghyun Yoo</span>'
+      /Jounghyun Yoo([†*])?/g,
+      '<span class="my-name">Jounghyun Yoo$1</span>'
     );
   });
 
-  /* Replace year-only journal lines with journal, volume, and first page/article number */
+  /* Published papers: journal in italic + volume + first page/article number */
   const publicationInfo = {
-    "Enzymatic microbubble robots": "Nature Nanotechnology, 21, 397",
-    "Directed and rapid intracellular delivery of CRISPR/Cas9 ribonucleoproteins using charge-reversible fusogenic nanoparticles for therapeutic genome editing": "Small, 22, e11362",
-    "Surface-engineered nanobeads for regioselective antibody binding: A robust immunoassay platform leveraging catalytic signal amplification": "Biosensors and Bioelectronics, 281, 117463",
-    "Imaging-guided deep tissue in vivo sound printing": "Science, 388, 616",
-    "All-printed chip-less wearable neuromorphic system for multimodal physiochemical heath monitoring": "Nature Communications, 16, 5689",
-    "Sustained release of HIF-2α inhibitors using biodegradable porous silicon carriers for enhanced immunogenic cell death of malignant Merkel cell carcinoma": "ACS Applied Materials & Interfaces, 17, 7449",
-    "Sustained release of HIF-2{\\alpha} inhibitors using biodegradable porous silicon carriers for enhanced immunogenic cell death of malignant Merkel cell carcinoma": "ACS Applied Materials & Interfaces, 17, 7449",
-    "Photonic control of ligand nanospacing in self-assembly regulates stem cell fate": "Bioactive Materials, 34, 164",
-    "Imaging-guided bioresorbable acoustic hydrogel microrobots": "Science Robotics, 9, eadp3593",
-    "Bacterial outer membrane vesicle nanorobot": "Proceedings of the National Academy of Sciences, 121, e2403460121",
-    "Room-temperature phosphorescence of defect-engineered silica nanoparticles for high-contrast afterglow bioimaging": "Chemical Engineering Journal, 493, 152529",
-    "Micro- and nanorobots for biomedical applications in the brain": "Nature Reviews Bioengineering, 1, 308",
-    "Tailored polyethylene glycol grafting on porous nanoparticles for enhanced targeting and intracellular siRNA delivery": "Nanoscale, 14, 14482",
-    "Multifunction-harnessed afterglow nanosensor for molecular imaging of acute kidney injury in vivo": "Small, 18, 2200245",
-    "Metal complexation-mediated stable and biocompatible nanoformulation of clinically approved near-infrared absorber for improved tumor targeting and photonic theranostics": "Nano Convergence, 8, 1",
-    "Photoswitchable microgels for dynamic macrophage modulation": "Advanced Materials, 34, 2205498",
-    "Direct deposition of anatase TiO2 on thermally unstable gold nanobipyramid: Morphology-conserved plasmonic nanohybrid for combinational photothermal and photocatalytic cancer therapy": "Applied Materials Today, 27, 101472",
-    "Photoechogenic inflatable nanohybrids for upconversion-mediated sonotheranostics": "ACS Nano, 15, 18394",
-    "Superoxide-responsive fluorogenic molecular probes for optical bioimaging of neurodegenerative events in Alzheimer's disease": "Analyst, 146, 4748",
-    "Biocompatible organosilica nanoparticles with self-encapsulated phenyl motifs for effective UV protection": "ACS Applied Materials & Interfaces, 12, 9062",
-    "A multi-dye containing MOF for the ratiometric detection and simultaneous removal of Cr2O7(2-) in the presence of interfering ions": "Sensors and Actuators B: Chemical, 283, 426",
-    "Photoluminescent and biodegradable porous silicon nanoparticles for biomedical imaging": "Journal of Materials Chemistry B, 7, 6271",
-    "Controlled growth of silica nanoparticles using two-phase orthogonal solvents for bioimaging": "Journal of Luminescence, 214, 116529",
-    "Formation of TiO2@carbon core/shell nanocomposites from single molecular layer of aromatic compounds for photocatalytic hydrogen peroxide generation": "ACS Applied Materials & Interfaces, 11, 41196",
-    "Defect-induced fluorescence of silica nanoparticles for bioimaging applications": "ACS Applied Materials & Interfaces, 10, 44247",
-    "In vivo photoacoustic imaging of livers using biodegradable hyaluronic acid-conjugated silica nanoparticles": "Advanced Functional Materials, 28, 1800941",
-    "Tailoring nanocrystalline metal-organic frameworks as fluorescent dye carriers for bioimaging": "Inorganic Chemistry, 56, 12859",
-    "Improving functionality of carbon nanodots: Doping and surface functionalization": "Journal of Materials Chemistry A, 4, 11582"
+    "Enzymatic microbubble robots": "<em>Nature Nanotechnology</em>, 21, 397",
+    "Directed and rapid intracellular delivery of CRISPR/Cas9 ribonucleoproteins using charge-reversible fusogenic nanoparticles for therapeutic genome editing": "<em>Small</em>, 22, e11362",
+    "Surface-engineered nanobeads for regioselective antibody binding: A robust immunoassay platform leveraging catalytic signal amplification": "<em>Biosensors and Bioelectronics</em>, 281, 117463",
+    "Imaging-guided deep tissue in vivo sound printing": "<em>Science</em>, 388, 616",
+    "All-printed chip-less wearable neuromorphic system for multimodal physiochemical heath monitoring": "<em>Nature Communications</em>, 16, 5689",
+    "Sustained release of HIF-2α inhibitors using biodegradable porous silicon carriers for enhanced immunogenic cell death of malignant Merkel cell carcinoma": "<em>ACS Applied Materials & Interfaces</em>, 17, 7449",
+    "Sustained release of HIF-2{\\alpha} inhibitors using biodegradable porous silicon carriers for enhanced immunogenic cell death of malignant Merkel cell carcinoma": "<em>ACS Applied Materials & Interfaces</em>, 17, 7449",
+    "Photonic control of ligand nanospacing in self-assembly regulates stem cell fate": "<em>Bioactive Materials</em>, 34, 164",
+    "Imaging-guided bioresorbable acoustic hydrogel microrobots": "<em>Science Robotics</em>, 9, eadp3593",
+    "Bacterial outer membrane vesicle nanorobot": "<em>Proceedings of the National Academy of Sciences</em>, 121, e2403460121",
+    "Room-temperature phosphorescence of defect-engineered silica nanoparticles for high-contrast afterglow bioimaging": "<em>Chemical Engineering Journal</em>, 493, 152529",
+    "Micro- and nanorobots for biomedical applications in the brain": "<em>Nature Reviews Bioengineering</em>, 1, 308",
+    "Tailored polyethylene glycol grafting on porous nanoparticles for enhanced targeting and intracellular siRNA delivery": "<em>Nanoscale</em>, 14, 14482",
+    "Multifunction-harnessed afterglow nanosensor for molecular imaging of acute kidney injury in vivo": "<em>Small</em>, 18, 2200245",
+    "Metal complexation-mediated stable and biocompatible nanoformulation of clinically approved near-infrared absorber for improved tumor targeting and photonic theranostics": "<em>Nano Convergence</em>, 8, 1",
+    "Photoswitchable microgels for dynamic macrophage modulation": "<em>Advanced Materials</em>, 34, 2205498",
+    "Direct deposition of anatase TiO2 on thermally unstable gold nanobipyramid: Morphology-conserved plasmonic nanohybrid for combinational photothermal and photocatalytic cancer therapy": "<em>Applied Materials Today</em>, 27, 101472",
+    "Photoechogenic inflatable nanohybrids for upconversion-mediated sonotheranostics": "<em>ACS Nano</em>, 15, 18394",
+    "Superoxide-responsive fluorogenic molecular probes for optical bioimaging of neurodegenerative events in Alzheimer's disease": "<em>Analyst</em>, 146, 4748",
+    "Biocompatible organosilica nanoparticles with self-encapsulated phenyl motifs for effective UV protection": "<em>ACS Applied Materials & Interfaces</em>, 12, 9062",
+    "A multi-dye containing MOF for the ratiometric detection and simultaneous removal of Cr2O7(2-) in the presence of interfering ions": "<em>Sensors and Actuators B: Chemical</em>, 283, 426",
+    "Photoluminescent and biodegradable porous silicon nanoparticles for biomedical imaging": "<em>Journal of Materials Chemistry B</em>, 7, 6271",
+    "Controlled growth of silica nanoparticles using two-phase orthogonal solvents for bioimaging": "<em>Journal of Luminescence</em>, 214, 116529",
+    "Formation of TiO2@carbon core/shell nanocomposites from single molecular layer of aromatic compounds for photocatalytic hydrogen peroxide generation": "<em>ACS Applied Materials & Interfaces</em>, 11, 41196",
+    "Defect-induced fluorescence of silica nanoparticles for bioimaging applications": "<em>ACS Applied Materials & Interfaces</em>, 10, 44247",
+    "In vivo photoacoustic imaging of livers using biodegradable hyaluronic acid-conjugated silica nanoparticles": "<em>Advanced Functional Materials</em>, 28, 1800941",
+    "Tailoring nanocrystalline metal-organic frameworks as fluorescent dye carriers for bioimaging": "<em>Inorganic Chemistry</em>, 56, 12859",
+    "Improving functionality of carbon nanodots: Doping and surface functionalization": "<em>Journal of Materials Chemistry A</em>, 4, 11582"
   };
 
   const publicationItems = document.querySelectorAll(".publications ol.bibliography > li");
@@ -220,11 +224,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const titleText = titleBlock.textContent.replace(/\s+/g, " ").trim();
 
-    Object.keys(publicationInfo).forEach(function (title) {
-      if (titleText === title) {
-        periodicalBlock.innerHTML = publicationInfo[title];
-      }
-    });
+    if (publicationInfo[titleText]) {
+      periodicalBlock.innerHTML = publicationInfo[titleText];
+    } else {
+      /* For under revision / in press papers: keep journal italic, remove year */
+      periodicalBlock.innerHTML = periodicalBlock.innerHTML
+        .replace(/,\s*20\d{2}/g, "")
+        .replace(/\s*20\d{2}/g, "")
+        .replace(/,\s*$/g, "")
+        .trim();
+    }
   });
 });
 </script>
