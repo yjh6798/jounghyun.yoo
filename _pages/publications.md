@@ -98,6 +98,14 @@ nav_order: 4
   word-break: normal;
 }
 
+/* Highlight my name subtly */
+.publications ol.bibliography .author em,
+.publications ol.bibliography .authors em {
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #8a0078 !important;
+}
+
 .publications ol.bibliography .periodical {
   margin-top: 0.15rem !important;
   line-height: 1.35 !important;
