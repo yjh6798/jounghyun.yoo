@@ -6,7 +6,6 @@
     initTheme();
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Jounghyun</span> Yoo </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Research </a> </li> <li class="nav-item "> <a class="nav-link" href="/academic-background/">Academic Background </a> </li> <li class="nav-item active"> <a class="nav-link" href="/publications/">Publications <span class="sr-only">(current)</span> </a> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Publications</h1> <p class="post-description"></p> </header> <article> <style>
 .publications {
-  counter-reset: pubnum;
   max-width: none;
 }
 
@@ -33,6 +32,7 @@
   padding-left: 0 !important;
   margin-left: 0 !important;
   visibility: hidden;
+  counter-reset: pubnum var(--pub-count);
 }
 
 .publications.pub-loaded ol.bibliography {
@@ -40,7 +40,7 @@
 }
 
 .publications ol.bibliography > li {
-  counter-increment: pubnum;
+  counter-increment: pubnum -1;
   list-style: none !important;
   display: flex !important;
   align-items: flex-start !important;
@@ -53,8 +53,8 @@
 
 .publications ol.bibliography > li::before {
   content: counter(pubnum) ".";
-  flex: 0 0 22px;
-  width: 22px;
+  flex: 0 0 28px;
+  width: 28px;
   text-align: right;
   font-size: 1.05rem;
   font-weight: 500;
@@ -153,8 +153,8 @@
   }
 
   .publications ol.bibliography > li::before {
-    flex-basis: 20px;
-    width: 20px;
+    flex-basis: 24px;
+    width: 24px;
     font-size: 1rem;
   }
 }
@@ -167,15 +167,15 @@
     const lists = pub.querySelectorAll("ol.bibliography");
 
     lists.forEach(function (list) {
+      const items = list.querySelectorAll(":scope > li");
+      list.style.setProperty("--pub-count", items.length + 1);
+
       list.innerHTML = list.innerHTML
-        /* Remove years from generated bibliography entries */
         .replace(/,\s*(19|20)\d{2}(?=\s*(<|$|\.|,))/g, "")
         .replace(/\s*\(\s*(19|20)\d{2}\s*\)/g, "")
         .replace(/>\s*,\s*(19|20)\d{2}\s*</g, "><")
         .replace(/>\s*,\s*(19|20)\d{2}/g, ">")
         .replace(/\s+(19|20)\d{2}(?=\s*<)/g, "")
-
-        /* Clean punctuation */
         .replace(/,\s*,/g, ",")
         .replace(/,\s*\./g, ".")
         .replace(/,\s*</g, "<")
@@ -197,19 +197,14 @@
       }
 
       const parts = rawText.split(",");
-      if (parts.length < 2) {
-        return;
-      }
+      if (parts.length < 2) return;
 
       const journal = parts.shift().trim();
       const details = parts.join(",").trim();
 
-      if (!journal || !details) {
-        return;
-      }
+      if (!journal || !details) return;
 
-      periodical.innerHTML =
-        "<em>" + journal + "</em>, " + details;
+      periodical.innerHTML = "<em>" + journal + "</em>, " + details;
     });
 
     pub.classList.add("pub-loaded");
