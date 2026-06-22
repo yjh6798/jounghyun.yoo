@@ -99,11 +99,9 @@ nav_order: 4
 }
 
 /* Highlight my name subtly */
-.publications ol.bibliography .author em,
-.publications ol.bibliography .authors em {
-  font-style: normal !important;
-  font-weight: 400 !important;
+.publications .my-name {
   color: #8a0078 !important;
+  font-weight: 400 !important;
 }
 
 .publications ol.bibliography .periodical {
@@ -165,3 +163,18 @@ nav_order: 4
 {% bibliography %}
 
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const authorBlocks = document.querySelectorAll(
+    ".publications ol.bibliography .author, .publications ol.bibliography .authors"
+  );
+
+  authorBlocks.forEach(function (block) {
+    block.innerHTML = block.innerHTML.replace(
+      /Jounghyun Yoo/g,
+      '<span class="my-name">Jounghyun Yoo</span>'
+    );
+  });
+});
+</script>
